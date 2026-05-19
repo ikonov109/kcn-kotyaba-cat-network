@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>KCN / KCP — Kotyaba Cat Network</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, 'Arial', sans-serif;
+            background: #0a0c10;
+            color: #e6edf3;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        /* header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #2d3a4a;
+            padding-bottom: 1.5rem;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .logo span {
+            background: #1f6f8b;
+            padding: 0.2rem 0.6rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+        .badge {
+            background: #2d3a4a;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-family: monospace;
+        }
+        /* карточки */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #a5d6ff, #7aa2f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        .flex-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2.5rem 0;
+        }
+        .card {
+            background: #161b22;
+            border: 1px solid #2d3a4a;
+            border-radius: 24px;
+            padding: 1.8rem;
+            width: 300px;
+            transition: 0.2s;
+        }
+        .card:hover {
+            border-color: #7aa2f7;
+            transform: translateY(-4px);
+        }
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .protocol {
+            font-family: monospace;
+            font-size: 1.2rem;
+            background: #0a0c10;
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            margin: 0.5rem 0;
+        }
+        .btn {
+            display: inline-block;
+            background: #1f6f8b;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: 0.2s;
+        }
+        .btn-light {
+            background: #2d3a4a;
+        }
+        .btn:hover {
+            background: #7aa2f7;
+            color: #0a0c10;
+        }
+        .domain-line {
+            font-family: monospace;
+            background: #0a0c10;
+            padding: 0.8rem;
+            border-radius: 16px;
+            border-left: 4px solid #7aa2f7;
+            margin: 0.8rem 0;
+        }
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            border-top: 1px solid #2d3a4a;
+            padding-top: 2rem;
+            font-size: 0.85rem;
+            color: #8b949e;
+        }
+        a {
+            color: #7aa2f7;
+            text-decoration: none;
+        }
+        pre {
+            background: #0a0c10;
+            padding: 1rem;
+            border-radius: 16px;
+            overflow-x: auto;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            🐱 KCN·KCP
+        </div>
+        <div class="badge">
+            🌐 kotyaba cat network
+        </div>
+    </div>
+
+    <div class="hero">
+        <h1>свободная сеть<br>без ICANN и без платы</h1>
+        <p style="max-width: 700px; margin: 1rem auto;">домены <code>kcp://...</code> → свой DNS → свой интернет</p>
+        <div>
+            <a href="/register" class="btn">📝 регистратор доменов</a>
+            <a href="https://github.com/ikonov109/kcn-kotyaba-cat-network" class="btn btn-light">🐙 github</a>
+        </div>
+    </div>
+
+    <div class="flex-cards">
+        <div class="card">
+            <h3>🐱 KCN</h3>
+            <div style="font-size: 2rem;">🌍</div>
+            <p><strong>Kotyaba Cat Network</strong> — экосистема: браузер, хостинг, регистратор.</p>
+            <div class="protocol">kcn:// (идея)</div>
+            <div class="protocol">kcp:// (реализация)</div>
+            <a href="/site/kcn/" class="btn btn-light" style="margin-top: 0.5rem;">о kcn →</a>
+        </div>
+
+        <div class="card">
+            <h3>🔌 KCP</h3>
+            <div style="font-size: 2rem;">📡</div>
+            <p><strong>Kotyaba Cat Protocol</strong> — протокол (как HTTP, но свободный).</p>
+            <div class="protocol">kcp://мой-кот</div>
+            <div class="domain-line">217.198.5.134:4433</div>
+            <a href="/api/resolve?name=register.domains" class="btn btn-light">пример API</a>
+        </div>
+
+        <div class="card">
+            <h3>🧩 мост</h3>
+            <div style="font-size: 2rem;">🌉</div>
+            <p><code>kcp://домен</code> → KCPDNS → реальный <code>http://ip:port</code><br>→ открывается в браузере.</p>
+            <div class="protocol">kcp://google → google.com</div>
+            <div class="protocol">kcp://образ → твой хостинг</div>
+        </div>
+    </div>
+
+    <div style="background: #0f1217; border-radius: 24px; padding: 1.8rem; margin: 2rem 0;">
+        <h3>⚡ как работает kcp://</h3>
+        <pre>1. пользователь вводит:  kcp://мой-кот
+2. KCN Browser → запрос к серверу 217.198.5.134:4433/api/resolve?name=мой-кот
+3. сервер возвращает:  "192.168.1.10:8080"
+4. клиент открывает  http://192.168.1.10:8080  во встроенном WebView</pre>
+        <p style="margin-top: 0.8rem;">🔒 <strong>пользователь никогда не видит реальный ip</strong> — только <code>kcp://мой-кот</code>.</p>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+        <div style="flex: 1; min-width: 200px;">
+            <h3>📦 регистратор</h3>
+            <p>бесплатные домены, без карты, без смс.<br>
+            <a href="/register">→ зарегистрировать домен</a></p>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+            <h3>🧪 примеры</h3>
+            <ul style="padding-left: 1.2rem;">
+                <li><code>kcp://register.domains</code> → веб-регистратор</li>
+                <li><code>kcp://kcn</code> → этот сайт</li>
+                <li><code>kcp://мой-кот</code> → твой личный сайт</li>
+            </ul>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+            <h3>🐙 репозиторий</h3>
+            <p><a href="https://github.com/ikonov109/kcn-kotyaba-cat-network">github.com/ikonov109/kcn-kotyaba-cat-network</a><br>
+            KCN Browser, примеры, сборка .exe, документация.</p>
+        </div>
+    </div>
+
+    <footer>
+        🐱 KCN / KCP — kotyaba cat network | mit license | ikonov109<br>
+        <span style="font-size: 0.75rem;">сервер: 217.198.5.134:4433 &nbsp;|&nbsp; kcp://register.domains</span>
+    </footer>
+</div>
+</body>
+</html>
